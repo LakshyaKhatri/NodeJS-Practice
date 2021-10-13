@@ -20,18 +20,18 @@ let user = makeUser();
 
 // Problem: https://javascript.info/task/calculator
 let calculator = {
-  read(){
-    this.a = +(prompt('Enter first number: '));
-    this.b = +(prompt('Enter second number: '));
+  read() {
+    this.a = +prompt('Enter first number: ');
+    this.b = +prompt('Enter second number: ');
   },
-  sum(){
+  sum() {
     if (this.a === undefined) {
       console.log('Use calculator.read() to register input values first');
       return;
     }
     return (this.a + this.b);
   },
-  mul(){
+  mul() {
     if (this.a === undefined) {
       console.log('Use calculator.read() to register input values first');
       return;
@@ -40,6 +40,49 @@ let calculator = {
   }
 };
 
-console.log(calculator.read());
-console.log(calculator.sum());
-console.log(calculator.mul());
+// console.log(calculator.read());
+// console.log(calculator.sum());
+// console.log(calculator.mul());
+
+
+// Problem: https://javascript.info/task/chain-calls
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // shows the current step
+    console.log( this.step );
+  }
+};
+
+// Current Use:
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep();
+
+// Desired Use:
+// ladder.up().up().down().showStep();
+
+// Solution:
+let chainedLadder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function() { // shows the current step
+    console.log( this.step );
+    return this;
+  }
+};
+
+chainedLadder.up().up().down().showStep(); // 1

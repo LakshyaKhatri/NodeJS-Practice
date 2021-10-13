@@ -42,3 +42,19 @@ calculator.read();
 
 console.log( "Sum=" + calculator.sum() );
 console.log( "Mul=" + calculator.mul() );
+
+
+// Problem: https://javascript.info/task/accumulator
+function Accumulator(startingValue){
+  this.value = startingValue || 0;
+  this.read = function() {
+    this.value += +prompt('How much to add?: ');
+  }
+}
+
+let accumulator = new Accumulator(1); // initial value 1
+
+accumulator.read(); // adds the user-entered value
+accumulator.read(); // adds the user-entered value
+
+console.log(accumulator.value); // shows the sum of these values

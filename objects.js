@@ -1,5 +1,4 @@
 // Problem: https://javascript.info/task/hello-object
-
 let user = {};
 user.name = 'John';
 user.surname = 'Smith';
@@ -8,7 +7,6 @@ delete user.name;
 
 
 // Problem: https://javascript.info/task/is-empty
-
 function isEmpty(obj) {
   for(key in obj) {
     // if loop starts then there's a key in the object

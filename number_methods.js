@@ -12,3 +12,13 @@ function readNumber() {
 
   return +number;
 }
+
+
+// Problem: https://javascript.info/task/random-min-max
+function random(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+function randomInteger(min, max){
+  return Math.round(random(min, max));
+}

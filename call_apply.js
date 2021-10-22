@@ -9,6 +9,8 @@ function spy(func) {
   return wrapper;
 }
 
+
+// Driver code
 function work(a, b) {
   console.log( a + b ); // work is an arbitrary function or method
 }
@@ -21,3 +23,26 @@ work(4, 5); // 9
 for (let args of work.calls) {
   console.log( 'call:' + args.join() ); // "call:1,2", "call:4,5"
 }
+
+
+//==============================================================================
+// Problem: https://javascript.info/task/delay                                //
+//==============================================================================
+function delay(f, ms) {
+  return function(...args) {
+    setTimeout(f, ms, ...args);
+  };
+}
+
+
+// Driver code
+function f(x) {
+  console.log(x);
+}
+
+// create wrappers
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+
+f1000("test"); // shows "test" after 1000ms
+f1500("test"); // shows "test" after 1500ms

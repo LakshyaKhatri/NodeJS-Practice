@@ -1,11 +1,14 @@
 'use strict'
 const prompt = require("prompt-sync")();
 
-//================================================================================
-// Problem 2: Write a JavaScript program to test if the first character of a
-//            string is uppercase or not, if not then set the first character
-//            to uppercase.
-//================================================================================
+/*
+ ===============================================================================
+ * Problem 2: Write a JavaScript program to test if the first character of a
+ *            string is uppercase or not, if not then set the first character
+ *            to uppercase.
+ *
+ ===============================================================================
+ */
 function toUpCase(str) {
   let firstCharCode = str.charCodeAt(0);
   if (firstCharCode >= 97 && firstCharCode < 123) {
@@ -19,12 +22,14 @@ console.log(toUpCase('abc'));
 console.log(toUpCase('Abc'));
 
 
-//==============================================================================
-// Problem3: Create a constructor function Calculator that creates objects with 3 methods:
-//  read() asks for two values using prompt and remembers them in object properties.
-//  sum() returns the sum of these properties.
-//  mul() returns the multiplication product of these properties.
-//==============================================================================
+/*
+ ===============================================================================
+ * Problem3: Create a constructor function Calculator that creates objects with 3 methods:
+ *  read() asks for two values using prompt and remembers them in object properties.
+ *  sum() returns the sum of these properties.
+ *  mul() returns the multiplication product of these properties.
+ ==============================================================================
+ */
 
 function Calculator() {
   this.read = function() {

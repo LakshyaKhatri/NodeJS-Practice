@@ -46,3 +46,23 @@ let f1500 = delay(f, 1500);
 
 f1000("test"); // shows "test" after 1000ms
 f1500("test"); // shows "test" after 1500ms
+
+
+//==============================================================================
+// Problem: https://javascript.info/task/debounce                             //
+//==============================================================================
+function debounce(f, ms) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => f.apply(this, args), ms);
+  };
+}
+
+
+// Driver code
+let debounced_f = debounce(console.log, 1000);
+
+setTimeout( () => debounced_f("b"), 200);
+setTimeout( () => debounced_f("c"), 500);
+debounced_f("a");

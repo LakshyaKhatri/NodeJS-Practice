@@ -1,6 +1,3 @@
-'use strict'
-const prompt = require("prompt-sync")();
-
 /*
 ================================================================================
  * Problem: Write a regex pattern that matches the password:
@@ -10,7 +7,7 @@ const prompt = require("prompt-sync")();
  *
 ================================================================================
 */
-let passwordRegex = /^([\w!#\$%&'\*\+\-\/=\?\^_`{\|}~]+\.?)*[\w!#\$%&'\*\+\-\/=\?\^_`{\|}~]$/gi;
+let passwordRegex = /^([\w!#\$%&'\*\+\-\/=\?\^_`{\|}~]+\.?)*[\w!#\$%&'\*\+\-\/=\?\^_`{\|}~]$/g;
 
 // Driver Code
 console.log(passwordRegex.test('A$_*bc'));

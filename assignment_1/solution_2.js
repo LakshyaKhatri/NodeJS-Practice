@@ -1,6 +1,3 @@
-'use strict'
-const prompt = require("prompt-sync")();
-
 /*
  ===============================================================================
  * Problem 2: Write a JavaScript program to test if the first character of a

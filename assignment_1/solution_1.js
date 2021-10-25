@@ -1,6 +1,3 @@
-'use strict'
-const prompt = require("prompt-sync")();
-
 /*
 ================================================================================
  * Problem: Create a function to calculate the factorial of a number using

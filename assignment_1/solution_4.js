@@ -1,6 +1,3 @@
-'use strict'
-const prompt = require("prompt-sync")();
-
 /*
 ================================================================================
  * Problem: Deep clone Javascript Object (without using any internal

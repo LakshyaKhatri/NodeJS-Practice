@@ -5,7 +5,7 @@ const prompt = require("prompt-sync")();
  ===============================================================================
  * Problem: https://javascript.info/task/search-algorithm
  ===============================================================================
- */
+*/
 let head = {
   glasses: 1
 };
@@ -27,3 +27,22 @@ let pockets = {
 };
 
 console.log({ pen: pockets.pen });
+
+
+/*
+ ===============================================================================
+ * Problem: https://javascript.info/task/defer-to-prototype-extended
+ ===============================================================================
+*/
+Function.prototype.defer = function(ms) {
+  let f = this;
+  return function(...args) {
+    setTimeout(() => f.apply(this, args), ms);
+  }
+};
+
+function f(a, b) {
+  console.log( a + b );
+}
+
+f.defer(1000)(1, 2);

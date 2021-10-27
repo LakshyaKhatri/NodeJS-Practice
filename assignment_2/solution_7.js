@@ -18,15 +18,12 @@ function validateString(input, callback) {
 }
 
 let inptArray = ['first', 'Second', 'thiRd', 4, false, 'true'];
-let result = {};
 
-let testArray = inptArray.reduce((promiseChain, element) => {
-    return promiseChain.then(() => new Promise(resolve => {
-      validateString(element, (error, valid) => {
-        result[element] = !!valid;
-        resolve(null);
-      });
-    }));
-}, Promise.resolve());
+let result = inptArray.reduce((result, element) => {
+  validateString(element, (error, valid) => {
+    result[element] = !!valid;
+  });
+  return result;
+}, {});
 
-testArray.then(() => console.log(JSON.stringify(result, null, 2)));
+setTimeout(() => console.log(result), 500);
